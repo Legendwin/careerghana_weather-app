@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#f1a653">
+        <title>Weather Mood</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body data-theme="default">
+        <main class="page">
+            <header class="page-header">
+                <a class="brand" href="./" aria-label="Weather Mood home">
+                    <span class="brand-icon" aria-hidden="true">☀</span>
+                    <span>weather<span class="brand-accent">mood</span></span>
+                </a>
+                <p class="tagline">A little forecast for your day.</p>
+            </header>
+
+            <section class="weather-card" aria-label="City weather">
+                <form class="search" id="search-form">
+                    <label class="visually-hidden" for="search">Search for a city</label>
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        id="search"
+                        name="city"
+                        placeholder="Search any city..."
+                        autocomplete="off"
+                        required
+                    >
+                    <button class="search-button" type="submit">Find weather</button>
+                </form>
+
+                <div class="unit-switch" role="group" aria-label="Temperature unit">
+                    <button type="button" data-unit="celsius" aria-pressed="true">°C</button>
+                    <button type="button" data-unit="fahrenheit" aria-pressed="false">°F</button>
+                </div>
+
+                <p class="status" id="status" role="status" aria-live="polite">
+                    Search for a city to see what's in the air.
+                </p>
+
+                <section class="weather-results" id="weather-results" aria-live="polite" hidden>
+                    <div class="location-row">
+                        <div>
+                            <p class="eyebrow">CURRENT WEATHER</p>
+                            <h1 class="city" id="city-name"></h1>
+                            <p class="date" id="weather-date"></p>
+                        </div>
+                        <div class="condition-icon" id="condition-icon" role="img" aria-label=""></div>
+                    </div>
+
+                    <div class="current-weather">
+                        <p class="temperature"><span id="temperature"></span><span class="degree" id="degree">°C</span></p>
+                        <div class="condition-copy">
+                            <h2 class="condition" id="condition"></h2>
+                            <p>Feels like <span id="feels-like"></span><span id="feels-degree">°C</span></p>
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail">
+                            <span class="detail-icon" aria-hidden="true">◌</span>
+                            <div><p class="detail-label">Humidity</p><p class="detail-value"><span id="humidity"></span>%</p></div>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-icon" aria-hidden="true">↗</span>
+                            <div><p class="detail-label">Wind</p><p class="detail-value"><span id="wind"></span> km/h</p></div>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-icon" aria-hidden="true">⌁</span>
+                            <div><p class="detail-label">Precipitation</p><p class="detail-value"><span id="precipitation"></span> mm</p></div>
+                        </div>
+                    </div>
+                    <p class="attribution">Weather data by Open-Meteo</p>
+                </section>
+            </section>
+
+            <footer class="page-footer">Take the day as it comes.</footer>
+        </main>
+        <script src="./script.js"></script>
+    </body>
+</html>
